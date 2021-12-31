@@ -1,0 +1,27 @@
+{
+  "extends": ["react-app", "plugin:prettier/recommended", "prettier/react"],
+  "plugins": ["prettier", "@typescript-eslint"],
+  "rules": {
+    "prettier/prettier": ["error", { "singleQuote": false }],
+    "arrow-body-style": ["error", "as-needed"],
+    "no-unused-vars": ["error", { "args": "all" }]
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "overrides": [
+    {
+      "files": ["**/*.ts", "**/*.tsx"],
+      "extends": [
+        "react-app",
+        "plugin:prettier/recommended",
+        "plugin:@typescript-eslint/recommended",
+        "prettier/@typescript-eslint",
+        "prettier/react"
+      ]
+    }
+  ]
+}
