@@ -1,9 +1,9 @@
 import { ReactNode } from "react";
+import { Navigation } from "./components/Navigation/Navigation.component";
 import {
   StyledFooter as Footer,
   StyledLayoutWrapper as Wrapper,
   StyledMain as Main,
-  StyledNavigation as Navigation,
 } from "./Layout.styles";
 
 interface LayoutProps {
@@ -13,7 +13,11 @@ interface LayoutProps {
 export const Layout = ({ children }: LayoutProps) => {
   return (
     <Wrapper>
-      <Navigation>Navbar</Navigation>
+      <Navigation
+        leftSide={<p>Left</p>}
+        center={<p>Center</p>}
+        rightSide={<p>Right</p>}
+      />
       <Main>{children}</Main>
       <Footer>Footer</Footer>
     </Wrapper>
