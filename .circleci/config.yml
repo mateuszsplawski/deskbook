@@ -2,22 +2,26 @@
 # See: https://circleci.com/docs/2.0/configuration-reference
 version: 2.1
 
-# Define a job to be invoked later in a workflow.
-# See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 jobs:
+  install-packages:
+     - image: cimg/base:stable
+    steps:
+      - checkout
+      - run:
+          name: 'Install packages'
+          command: 'yarn install'
+
   type-check:
     docker:
       - image: cimg/base:stable
-    # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     steps:
       - checkout
       - run:
           name: 'Check types'
           command: 'yarn check-types'
 
-# Invoke jobs via workflows
-# See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
   deployment:
     jobs:
+      - install-packages
       - type-check
