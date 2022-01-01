@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { Logo } from "../Logo/Logo.component";
 import { Navigation } from "./components/Navigation/Navigation.component";
 import {
   StyledFooter as Footer,
@@ -14,7 +15,7 @@ export const Layout = ({ children }: LayoutProps) => {
   return (
     <Wrapper>
       <Navigation
-        leftSide={<p>Left</p>}
+        leftSide={<Logo />}
         center={<p>Center</p>}
         rightSide={<p>Right</p>}
       />
