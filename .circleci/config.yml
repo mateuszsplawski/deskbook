@@ -4,6 +4,7 @@ version: 2.1
 
 jobs:
   install-packages:
+    docker:
      - image: cimg/base:stable
     steps:
       - checkout
