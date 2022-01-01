@@ -20,7 +20,7 @@ jobs:
           key: yarn-packages-{{ checksum "yarn.lock" }}
           paths:
             - .yarn/cache
-            - .yarn/unplugged
+            - .yarn/unpluggedgp -
       - persist_to_workspace:
           root: ~/
           paths: .
@@ -32,7 +32,7 @@ jobs:
       - attach_workspace:
           at: ~/
       - run:
-          name: 'Build'
+          name: 'Build app to dist'
           command: 'yarn build'
 
   type-check:
@@ -45,6 +45,16 @@ jobs:
           name: 'Check types'
           command: 'yarn check-types'
 
+  test:
+    docker:
+      - image: cimg/node:17.3.0
+    steps:
+      - attach_workspace:
+          at: ~/
+      - run:
+          name: 'Test app'
+          command: 'yarn test'
+
 workflows:
   deployment:
     jobs:
@@ -52,6 +62,11 @@ workflows:
       - type-check:
           requires:
             - install-packages
+      - test:
+          requires:
+            - install-packages
       - build-app-to-dist:
           requires:
             - install-packages
+            - test
+            - type-check
