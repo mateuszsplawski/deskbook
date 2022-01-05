@@ -27,11 +27,7 @@ export const Layout = ({
         metaRobots={metaRobots}
       />
       <Wrapper>
-        <Navigation
-          leftSide={<Logo />}
-          center={<p>Center</p>}
-          rightSide={<p>Right</p>}
-        />
+        <Navigation leftSide={<Logo />} center={<p>Center</p>} />
         <Main>{children}</Main>
         <Footer>Footer</Footer>
       </Wrapper>
