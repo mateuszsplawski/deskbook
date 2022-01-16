@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { MEDIA_QUERIES } from "../../../../theme";
+import { MEDIA_QUERIES } from "lib/ui-kit";
 
 export const StyledNavigationWrapper = styled.nav`
   width: 100vw;

@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet";
+
 import { MetaRobotsVariants, SeoMetadata } from "./Seo.types";
 
 const seoDefaultValues = {
@@ -25,6 +26,8 @@ export const Seo = ({
 
       <meta property="facebook:title" content={metaTitle} />
       <meta property="facebook:description" content={metaDescription} />
+
+      <meta name="robots" content={metaRobots} />
     </Helmet>
   );
 };
