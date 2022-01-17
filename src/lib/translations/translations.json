@@ -1,0 +1,20 @@
+{
+  "pl": {
+    "loginPage": {
+      "buttonText": "Zaloguj się"
+    },
+    "formFields": {
+      "emailLabel": "Adres Email",
+      "passwordLabel": "Hasło"
+    }
+  },
+  "en": {
+    "loginPage": {
+      "buttonText": "Login"
+    },
+    "formFields": {
+      "emailLabel": "Email",
+      "passwordLabel": "Password"
+    }
+  }
+}

@@ -5,7 +5,7 @@ version: 2.1
 jobs:
   install-packages:
     docker:
-     - image: cimg/node:17.3.0
+      - image: cimg/node:17.3.0
     steps:
       - checkout
       - restore_cache:
@@ -32,8 +32,8 @@ jobs:
       - attach_workspace:
           at: ~/
       - run:
-          name: 'Build app to dist'
-          command: 'yarn build'
+          name: "Build app to dist"
+          command: "yarn build"
 
   type-check:
     docker:
@@ -42,8 +42,8 @@ jobs:
       - attach_workspace:
           at: ~/
       - run:
-          name: 'Check types'
-          command: 'yarn check-types'
+          name: "Check types"
+          command: "yarn check-types"
 
   test:
     docker:
@@ -52,8 +52,8 @@ jobs:
       - attach_workspace:
           at: ~/
       - run:
-          name: 'Test app'
-          command: 'yarn test'
+          name: "Test app"
+          command: "yarn test"
 
 workflows:
   deployment:

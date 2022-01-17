@@ -4,6 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 import { Router } from "./routes/Router.component";
 import { Layout } from "lib/ui-kit";
 import { GlobalStyles } from "lib/shared";
+import { TranslationProvider } from "lib/translations";
 
 export const App = () => {
   return (
@@ -11,9 +12,11 @@ export const App = () => {
       <ChakraProvider>
         <GlobalStyles />
         <BrowserRouter>
-          <Layout>
-            <Router />
-          </Layout>
+          <TranslationProvider>
+            <Layout>
+              <Router />
+            </Layout>
+          </TranslationProvider>
         </BrowserRouter>
       </ChakraProvider>
     </>

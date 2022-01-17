@@ -1,6 +1,11 @@
 import { Field } from "formik";
+import { useTranslations } from "lib/translations";
 import { Input } from "lib/ui-kit";
 
 export const PasswordField = () => {
-  return <Field name="password" label="Password" as={Input} />;
+  const t = useTranslations();
+
+  return (
+    <Field name="password" label={t("formFields.passwordLabel")} as={Input} />
+  );
 };

@@ -1,5 +1,6 @@
 import { Formik, Form } from "formik";
 import { LoginFieldset } from "lib/form-kit";
+import { useTranslations } from "lib/translations";
 import { Button } from "lib/ui-kit";
 
 interface LoginFormValues {
@@ -13,6 +14,8 @@ const initialValues: LoginFormValues = {
 };
 
 export const LoginForm = () => {
+  const t = useTranslations();
+
   const handleSubmit = (values: LoginFormValues) => {
     console.log(values);
   };
@@ -20,7 +23,7 @@ export const LoginForm = () => {
     <Formik initialValues={initialValues} onSubmit={handleSubmit}>
       <Form>
         <LoginFieldset />
-        <Button type="submit" />
+        <Button type="submit">{t("loginPage.buttonText")}</Button>
       </Form>
     </Formik>
   );

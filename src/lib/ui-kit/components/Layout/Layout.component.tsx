@@ -1,8 +1,8 @@
 import { ReactNode } from "react";
 
+import { Seo, SeoMetadata } from "lib/shared";
 import { Logo } from "../Logo/Logo.component";
 import { Navigation } from "./components/Navigation/Navigation.component";
-import { Seo, SeoMetadata } from "lib/shared";
 import {
   StyledFooter as Footer,
   StyledLayoutWrapper as Wrapper,
