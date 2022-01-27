@@ -1,10 +1,10 @@
 import {
   Input as ChakraInput,
   InputProps as ChakraInputProps,
-  FormControl,
   FormLabel,
   FormErrorMessage,
 } from "@chakra-ui/react";
+import { StyledFormControl as FormControl } from "./Input.styles";
 
 interface InputProps extends ChakraInputProps {
   error?: string;

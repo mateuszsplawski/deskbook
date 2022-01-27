@@ -1,7 +1,8 @@
-import { Formik, Form } from "formik";
+import { Formik } from "formik";
 import { LoginFieldset } from "lib/form-kit";
 import { useTranslations } from "lib/translations";
 import { Button } from "lib/ui-kit";
+import { StyledLoginForm as Form } from "./Login.styles";
 
 interface LoginFormValues {
   email: string;

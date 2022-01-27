@@ -1,7 +1,8 @@
 {
   "pl": {
     "loginPage": {
-      "buttonText": "Zaloguj się"
+      "buttonText": "Zaloguj się",
+      "deskImageAlt": "Przestrzeń robocza z biurkiem i przyrządami na nim"
     },
     "formFields": {
       "emailLabel": "Adres Email",
@@ -10,7 +11,8 @@
   },
   "en": {
     "loginPage": {
-      "buttonText": "Login"
+      "buttonText": "Login",
+      "deskImageAlt": "Workspace with a desk and computer on it"
     },
     "formFields": {
       "emailLabel": "Email",
