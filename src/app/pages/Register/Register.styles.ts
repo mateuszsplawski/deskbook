@@ -1,6 +1,7 @@
 import { Form } from "formik";
-import { MEDIA_QUERIES } from "lib/ui-kit";
 import styled from "styled-components";
+
+import { MEDIA_QUERIES } from "lib/ui-kit";
 
 export const StyledDeskWithMacbookImage = styled.img`
   display: none;

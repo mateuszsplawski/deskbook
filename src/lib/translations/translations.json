@@ -16,6 +16,12 @@
       "loginInfo": "Masz już konto?",
       "login": "Przejdź do strony logowania"
     },
+    "resetPasswordPage": {
+      "header": "Resetuj hasło",
+      "buttonText": "Wyślij email z linkiem do resetu hasła",
+      "infoText": "Jeśli nie widzisz wiadomości z linkiem, sprawdź zawartość folderu SPAM.",
+      "deskWithDeveloperImageAlt": "Biurko przy którym siedzi programista"
+    },
     "formFields": {
       "emailLabel": "Adres Email",
       "emailPlaceholder": "Wpisz swój adres email",
@@ -47,6 +53,12 @@
       "deskWithMacbookImageAlt": "Desk with Macbook and some documents",
       "loginInfo": "Already have an account?",
       "login": "Go to login page"
+    },
+    "resetPasswordPage": {
+      "header": "Reset password",
+      "buttonText": "Send an email with reset password link",
+      "infoText": "If you can't see a message in your inbox, please check SPAM folder.",
+      "deskWithDeveloperImageAlt": "Desk with Developer sitting next to it"
     },
     "formFields": {
       "emailLabel": "Email",

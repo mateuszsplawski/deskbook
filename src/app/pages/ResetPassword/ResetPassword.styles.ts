@@ -3,12 +3,12 @@ import styled from "styled-components";
 
 import { MEDIA_QUERIES } from "lib/ui-kit";
 
-export const StyledDeskImage = styled.img`
+export const StyledDeskWithDeveloperImage = styled.img`
   display: none;
 
   ${MEDIA_QUERIES.tablet} {
     display: block;
-    width: 50%;
+    width: 100%;
     object-fit: cover;
   }
 `;
@@ -22,7 +22,7 @@ export const StyledRightColumn = styled.div`
   justify-content: center;
 `;
 
-export const StyledLoginForm = styled(Form)`
+export const StyledResetPasswordForm = styled(Form)`
   width: 100%;
   flex-direction: column;
   justify-content: center;
