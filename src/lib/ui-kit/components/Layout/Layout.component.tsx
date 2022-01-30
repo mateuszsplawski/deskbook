@@ -1,8 +1,8 @@
 import { ReactNode } from "react";
 
+import { Seo, SeoMetadata } from "lib/shared";
 import { Logo } from "../Logo/Logo.component";
 import { Navigation } from "./components/Navigation/Navigation.component";
-import { Seo, SeoMetadata } from "lib/shared";
 import {
   StyledFooter as Footer,
   StyledLayoutWrapper as Wrapper,
@@ -11,6 +11,7 @@ import {
 
 interface LayoutProps extends SeoMetadata {
   children: ReactNode;
+  hasFooter?: boolean;
 }
 
 export const Layout = ({
@@ -18,6 +19,7 @@ export const Layout = ({
   metaDescription,
   metaTitle,
   metaRobots,
+  hasFooter = true,
 }: LayoutProps) => {
   return (
     <>
@@ -29,7 +31,7 @@ export const Layout = ({
       <Wrapper>
         <Navigation leftSide={<Logo />} center={<p>Center</p>} />
         <Main>{children}</Main>
-        <Footer>Footer</Footer>
+        {hasFooter && <Footer>Footer</Footer>}
       </Wrapper>
     </>
   );

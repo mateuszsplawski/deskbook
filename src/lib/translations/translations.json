@@ -1,0 +1,42 @@
+{
+  "pl": {
+    "loginPage": {
+      "header": "Zaloguj się",
+      "buttonText": "Zaloguj się",
+      "deskImageAlt": "Przestrzeń robocza z biurkiem i przyrządami na nim",
+      "signUpInfo": "Nie masz konta?",
+      "signUp": "Zarejestruj się"
+    },
+    "formFields": {
+      "emailLabel": "Adres Email",
+      "emailPlaceholder": "Wpisz swój adres email",
+      "passwordLabel": "Hasło",
+      "passwordPlaceholder": "Wpisz swoje hasło"
+    },
+    "validationMessages": {
+      "invalidTypeEmail": "Pole musi zawierać poprawny adres email",
+      "notEnoughCharacters": "Minimalna ilość znaków to {characterCount}",
+      "fieldIsRequired": "Pole jest wymagane"
+    }
+  },
+  "en": {
+    "loginPage": {
+      "header": "Login",
+      "buttonText": "Login",
+      "deskImageAlt": "Workspace with a desk and computer on it",
+      "signUpInfo": "Don't have an account yet?",
+      "signUp": "Sign up"
+    },
+    "formFields": {
+      "emailLabel": "Email",
+      "emailPlaceholder": "Fill in your email address",
+      "passwordLabel": "Password",
+      "passwordPlaceholder": "Fill in your password"
+    },
+    "validationMessages": {
+      "invalidTypeEmail": "Value must be a valid email address",
+      "notEnoughCharacters": "Minimum characters count is {characterCount}",
+      "fieldIsRequired": "Field is required"
+    }
+  }
+}
