@@ -1,21 +1,36 @@
 import {
   Input as ChakraInput,
-  InputProps as ChakraInputProps,
   FormLabel,
   FormErrorMessage,
 } from "@chakra-ui/react";
+import { FieldProps } from "formik";
+
 import { StyledFormControl as FormControl } from "./Input.styles";
 
-interface InputProps extends ChakraInputProps {
-  error?: string;
+interface InputProps extends FieldProps<string> {
   label: string;
+  placeholder?: string;
+  type?: string;
 }
 
-export const Input = ({ error, name, label, ...props }: InputProps) => {
+export const Input = ({
+  placeholder,
+  label,
+  type,
+  field: { name, ...field },
+  meta: { error },
+}: InputProps) => {
   return (
     <FormControl isInvalid={!!error}>
       <FormLabel htmlFor={name}>{label}</FormLabel>
-      <ChakraInput id={name} name={name} variant="outline" {...props} />
+      <ChakraInput
+        id={name}
+        name={name}
+        placeholder={placeholder}
+        type={type}
+        variant="outline"
+        {...field}
+      />
       <FormErrorMessage>{error}</FormErrorMessage>
     </FormControl>
   );

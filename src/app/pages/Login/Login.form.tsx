@@ -1,13 +1,13 @@
 import { Formik } from "formik";
-import { LoginFieldset } from "lib/form-kit";
+import { LoginFieldset, loginValidationSchema } from "lib/form-kit";
 import { useTranslations } from "lib/translations";
 import { Button } from "lib/ui-kit";
 import { StyledLoginForm as Form } from "./Login.styles";
 
-interface LoginFormValues {
+type LoginFormValues = {
   email: string;
   password: string;
-}
+};
 
 const initialValues: LoginFormValues = {
   email: "",
@@ -21,8 +21,12 @@ export const LoginForm = () => {
     console.log(values);
   };
   return (
-    <Formik initialValues={initialValues} onSubmit={handleSubmit}>
-      <Form>
+    <Formik
+      validationSchema={loginValidationSchema}
+      initialValues={initialValues}
+      onSubmit={handleSubmit}
+    >
+      <Form noValidate>
         <LoginFieldset />
         <Button type="submit">{t("loginPage.buttonText")}</Button>
       </Form>

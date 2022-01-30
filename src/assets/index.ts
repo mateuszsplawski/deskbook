@@ -1,1 +1,1 @@
-export { default as deskImageSrc } from "./desk.png";
+export { default as deskImageSrc } from "./desk.jpeg";

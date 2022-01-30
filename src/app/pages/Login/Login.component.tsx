@@ -1,8 +1,12 @@
 import { LoginForm } from "./Login.form";
-import { StyledDeskImage as DeskImage } from "./Login.styles";
+import {
+  StyledDeskImage as DeskImage,
+  StyledRightColumn as RightColumn,
+} from "./Login.styles";
 import { deskImageSrc } from "assets";
 import { useTranslations } from "lib/translations";
-import { Layout, Section } from "lib/ui-kit";
+import { H1, Layout, Link, ParagraphSmall, Section } from "lib/ui-kit";
+import { AppRoutes } from "app";
 
 export const Login = () => {
   const t = useTranslations();
@@ -10,7 +14,14 @@ export const Login = () => {
     <Layout hasFooter={false}>
       <Section shouldNotScroll>
         <DeskImage alt={t("loginPage.deskImageAlt")} src={deskImageSrc} />
-        <LoginForm />
+        <RightColumn>
+          <H1>{t("loginPage.header")}</H1>
+          <LoginForm />
+          <ParagraphSmall>
+            {t("loginPage.signUpInfo")}&nbsp;
+            <Link to={AppRoutes.REGISTER}>{t("loginPage.signUp")}</Link>
+          </ParagraphSmall>
+        </RightColumn>
       </Section>
     </Layout>
   );
