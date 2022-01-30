@@ -14,12 +14,22 @@ export const Login = () => {
     <Layout hasFooter={false}>
       <Section shouldNotScroll>
         <DeskImage alt={t("loginPage.deskImageAlt")} src={deskImageSrc} />
+
         <RightColumn>
           <H1>{t("loginPage.header")}</H1>
+
           <LoginForm />
+
           <ParagraphSmall>
             {t("loginPage.signUpInfo")}&nbsp;
             <Link to={AppRoutes.REGISTER}>{t("loginPage.signUp")}</Link>
+          </ParagraphSmall>
+
+          <ParagraphSmall>
+            {t("loginPage.forgotPasswordInfo")}&nbsp;
+            <Link to={AppRoutes.RESET_PASSWORD}>
+              {t("loginPage.forgotPassword")}
+            </Link>
           </ParagraphSmall>
         </RightColumn>
       </Section>
