@@ -1,4 +1,6 @@
-import { Formik } from "formik";
+import { Formik, FormikHelpers } from "formik";
+import { useAuthentication } from "lib/authentication";
+
 import { registerValidationSchema, RegisterFieldset } from "lib/form-kit";
 import { useTranslations } from "lib/translations";
 import { Button } from "lib/ui-kit";
@@ -18,9 +20,18 @@ const initialValues: RegisterFormValues = {
 
 export const RegisterForm = () => {
   const t = useTranslations();
+  const { register } = useAuthentication();
 
-  const handleSubmit = (values: RegisterFormValues) => {
-    console.log(values);
+  const handleSubmit = async (
+    { email, password }: RegisterFormValues,
+    { resetForm }: FormikHelpers<RegisterFormValues>
+  ) => {
+    try {
+      await register({ email, password });
+      resetForm();
+    } catch (e) {
+      // toast error
+    }
   };
   return (
     <Formik
@@ -28,10 +39,14 @@ export const RegisterForm = () => {
       initialValues={initialValues}
       onSubmit={handleSubmit}
     >
-      <Form noValidate>
-        <RegisterFieldset />
-        <Button type="submit">{t("registerPage.buttonText")}</Button>
-      </Form>
+      {({ isSubmitting, dirty }) => (
+        <Form noValidate>
+          <RegisterFieldset />
+          <Button isLoading={isSubmitting} isDisabled={!dirty} type="submit">
+            {t("registerPage.buttonText")}
+          </Button>
+        </Form>
+      )}
     </Formik>
   );
 };
