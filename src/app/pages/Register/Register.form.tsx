@@ -4,6 +4,7 @@ import { useAuthentication } from "lib/authentication";
 import { registerValidationSchema, RegisterFieldset } from "lib/form-kit";
 import { useTranslations } from "lib/translations";
 import { Button } from "lib/ui-kit";
+import { useToast } from "lib/utils";
 import { StyledRegisterForm as Form } from "./Register.styles";
 
 type RegisterFormValues = {
@@ -21,6 +22,7 @@ const initialValues: RegisterFormValues = {
 export const RegisterForm = () => {
   const t = useTranslations();
   const { register } = useAuthentication();
+  const { successToast, errorToast } = useToast();
 
   const handleSubmit = async (
     { email, password }: RegisterFormValues,
@@ -29,8 +31,9 @@ export const RegisterForm = () => {
     try {
       await register({ email, password });
       resetForm();
-    } catch (e) {
-      // toast error
+      successToast(t("registerPage.successToast"));
+    } catch {
+      errorToast(t("registerPage.errorToast"));
     }
   };
   return (
