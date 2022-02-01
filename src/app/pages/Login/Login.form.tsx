@@ -1,8 +1,13 @@
 import { Formik } from "formik";
+import { useNavigate } from "react-router-dom";
+
+import { useAuthentication } from "lib/authentication";
 import { LoginFieldset, loginValidationSchema } from "lib/form-kit";
 import { useTranslations } from "lib/translations";
 import { Button } from "lib/ui-kit";
+import { useToast } from "lib/utils";
 import { StyledLoginForm as Form } from "./Login.styles";
+import { AppRoutes } from "app";
 
 type LoginFormValues = {
   email: string;
@@ -16,9 +21,18 @@ const initialValues: LoginFormValues = {
 
 export const LoginForm = () => {
   const t = useTranslations();
+  const { login } = useAuthentication();
+  const { successToast, errorToast } = useToast();
+  const navigate = useNavigate();
 
-  const handleSubmit = (values: LoginFormValues) => {
-    console.log(values);
+  const handleSubmit = async ({ email, password }: LoginFormValues) => {
+    try {
+      await login({ email, password });
+      navigate(AppRoutes.HOME);
+      successToast(t("loginPage.successToast"));
+    } catch {
+      errorToast(t("loginPage.errorToast"));
+    }
   };
   return (
     <Formik
@@ -26,10 +40,14 @@ export const LoginForm = () => {
       initialValues={initialValues}
       onSubmit={handleSubmit}
     >
-      <Form noValidate>
-        <LoginFieldset />
-        <Button type="submit">{t("loginPage.buttonText")}</Button>
-      </Form>
+      {({ isSubmitting, dirty }) => (
+        <Form noValidate>
+          <LoginFieldset />
+          <Button isLoading={isSubmitting} isDisabled={!dirty} type="submit">
+            {t("loginPage.buttonText")}
+          </Button>
+        </Form>
+      )}
     </Formik>
   );
 };

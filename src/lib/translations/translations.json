@@ -7,7 +7,9 @@
       "signUpInfo": "Nie masz konta?",
       "signUp": "Przejdź do strony rejestracji",
       "forgotPasswordInfo": "Zapomniałeś hasła?",
-      "forgotPassword": "Przejdź do strony resetowania hasła"
+      "forgotPassword": "Przejdź do strony resetowania hasła",
+      "successToast": "Zalogowano pomyślnie",
+      "errorToast": "Wystąpił błąd, spróbuj ponownie"
     },
     "registerPage": {
       "header": "Zarejestruj się",
@@ -15,14 +17,16 @@
       "deskWithMacbookImageAlt": "Biurko z Macbook'iem i dokumentami",
       "loginInfo": "Masz już konto?",
       "login": "Przejdź do strony logowania",
-      "successToast": "Konto zostało pomyślnie zarejestrowane. Potwierdź utworzenie konta za pomocą linku, który przyjdzie na Twój adres email.",
-      "errorToast": "Wystąpił błąd {error}, spróbuj ponownie."
+      "successToast": "Konto zostało pomyślnie zarejestrowane. Potwierdź utworzenie konta za pomocą linku, który przyjdzie na Twój adres email",
+      "errorToast": "Wystąpił błąd, spróbuj ponownie"
     },
     "resetPasswordPage": {
       "header": "Resetuj hasło",
       "buttonText": "Wyślij email z linkiem do resetu hasła",
       "infoText": "Jeśli nie widzisz wiadomości z linkiem, sprawdź zawartość folderu SPAM.",
-      "deskWithDeveloperImageAlt": "Biurko przy którym siedzi programista"
+      "deskWithDeveloperImageAlt": "Biurko przy którym siedzi programista",
+      "successToast": "Email został wysłany pomyślnie.",
+      "errorToast": "Wystąpił błąd, spróbuj ponownie"
     },
     "formFields": {
       "emailLabel": "Adres Email",
@@ -53,7 +57,9 @@
       "signUpInfo": "Don't have an account yet?",
       "signUp": "Go to sign up page",
       "forgotPasswordInfo": "Forgot password?",
-      "forgotPassword": "Go to reset password page"
+      "forgotPassword": "Go to reset password page",
+      "successToast": "Logged in successfully",
+      "errorToast": "There was an error, please try again"
     },
     "registerPage": {
       "header": "Register",
@@ -61,14 +67,16 @@
       "deskWithMacbookImageAlt": "Desk with Macbook and some documents",
       "loginInfo": "Already have an account?",
       "login": "Go to login page",
-      "successToast": "Account was created successfully. Confirm your new account with verification link on your email.",
-      "errorToast": "There was an error, please try again."
+      "successToast": "Account was created successfully. Confirm your new account with verification link on your email",
+      "errorToast": "There was an error, please try again"
     },
     "resetPasswordPage": {
       "header": "Reset password",
       "buttonText": "Send an email with reset password link",
       "infoText": "If you can't see a message in your inbox, please check SPAM folder.",
-      "deskWithDeveloperImageAlt": "Desk with Developer sitting next to it"
+      "deskWithDeveloperImageAlt": "Desk with Developer sitting next to it",
+      "successToast": "Email has been sent successfully",
+      "errorToast": "There was an error, please try again"
     },
     "formFields": {
       "emailLabel": "Email",
