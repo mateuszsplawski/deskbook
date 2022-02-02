@@ -1,7 +1,12 @@
-import { Formik } from "formik";
+import { AppRoutes } from "app";
+import { Formik, FormikHelpers } from "formik";
+import { useAuthentication } from "lib/authentication";
+
 import { registerValidationSchema, RegisterFieldset } from "lib/form-kit";
 import { useTranslations } from "lib/translations";
 import { Button } from "lib/ui-kit";
+import { useToast } from "lib/utils";
+import { useNavigate } from "react-router-dom";
 import { StyledRegisterForm as Form } from "./Register.styles";
 
 type RegisterFormValues = {
@@ -18,9 +23,18 @@ const initialValues: RegisterFormValues = {
 
 export const RegisterForm = () => {
   const t = useTranslations();
+  const { register } = useAuthentication();
+  const { successToast, errorToast } = useToast();
+  const navigate = useNavigate();
 
-  const handleSubmit = (values: RegisterFormValues) => {
-    console.log(values);
+  const handleSubmit = async ({ email, password }: RegisterFormValues) => {
+    try {
+      await register({ email, password });
+      navigate(AppRoutes.LOGIN);
+      successToast(t("registerPage.successToast"));
+    } catch {
+      errorToast(t("registerPage.errorToast"));
+    }
   };
   return (
     <Formik
@@ -28,10 +42,14 @@ export const RegisterForm = () => {
       initialValues={initialValues}
       onSubmit={handleSubmit}
     >
-      <Form noValidate>
-        <RegisterFieldset />
-        <Button type="submit">{t("registerPage.buttonText")}</Button>
-      </Form>
+      {({ isSubmitting, dirty }) => (
+        <Form noValidate>
+          <RegisterFieldset />
+          <Button isLoading={isSubmitting} isDisabled={!dirty} type="submit">
+            {t("registerPage.buttonText")}
+          </Button>
+        </Form>
+      )}
     </Formik>
   );
 };
